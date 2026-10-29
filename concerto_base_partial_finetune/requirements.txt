@@ -1,0 +1,16 @@
+# Dependencies for the Concerto rock-segmentation probes on Kaggle.
+# Install BEFORE training:  pip install -r requirements.txt
+#
+# torch / numpy / scipy / scikit-learn / pandas are preinstalled on Kaggle
+# GPU notebooks (torch with CUDA 12.1). flash-attn is NOT used (the official
+# enc_patch_size=1024 is reduced to 256 per the README, see config.py).
+#
+# IMPORTANT: the --find-links URL for torch-scatter must match the
+# preinstalled torch/cuda versions. Check with:
+#   python -c "import torch; print(torch.__version__, torch.version.cuda)"
+# and pick the matching line from https://data.pyg.org/whl/
+--find-links https://data.pyg.org/whl/torch-2.5.1+cu121.html
+torch-scatter
+spconv-cu121>=2.3.6
+timm
+huggingface_hub
