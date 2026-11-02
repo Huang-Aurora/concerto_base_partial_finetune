@@ -72,7 +72,7 @@ GRID_SIZE = 0.02
 # ~1M grid points the official K=1024 needs >20 GiB per layer (OOM), so per
 # the README's own advice ("reduce patch size if necessary") K is 256
 # (peak attention tensor ~3 GiB/layer). SAME deviation as the frozen probe.
-CONCERTO_CUSTOM_CONFIG = dict(enc_patch_size=[256] * 5, enable_flash=False)
+CONCERTO_CUSTOM_CONFIG = dict(enc_patch_size=[128] * 5, enable_flash=False)
 
 # ----------------------------------------------------------------- model ----
 # Point-level feature dim after the official README upcast:
